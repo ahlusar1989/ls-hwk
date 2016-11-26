@@ -11,4 +11,9 @@ Added features are sorting and filtering.
 2) bower install
 3) node server.js
 
+## Note: 
 
+To be discussed and implemented:
+
+Use the cache object afforded through https://github.com/Gottox/mongoose-cache in order to 
+monkey-patch Mongoose.query to support in-memory caching
