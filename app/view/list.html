@@ -1,0 +1,23 @@
+<div class="well">
+    <h1>{{title}}</h1>
+
+    <input class="form-control" placeholder="Search" ng-model="search">
+
+    <table class="table table-bordered table-hover table-striped table-list">
+        <thead>
+            <tr>
+                <th ng-click="sort('username')"><span class="glyphicon sort-icon" ng-show="sortKey == 'username'" ng-class="{'glyphicon-chevron-up': reverse, 'glyphicon-chevron-down': !reverse}"></span> Username</th>
+                <th ng-click="sort('created')"><span class="glyphicon sort-icon" ng-show="sortKey == 'created'" ng-class="{'glyphicon-chevron-up': reverse, 'glyphicon-chevron-down': !reverse}"></span>  Message </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="tip in tips | orderBy:sortKey:reverse | filter:search" ng-click="view(tip._id)">
+                <td>{{tip.username}}</td>
+                <td>{{tip.message}}</td>
+            </tr>
+            <tr ng-show="tips.length == 0">
+                <td colspan="2">No tips added yet!</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
