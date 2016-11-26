@@ -1,5 +1,5 @@
 angular.module('app').controller('ViewController', function($scope, $http, $location, $routeParams) {
-    $scope.title = "View Contact";
+    $scope.title = "View Tip";
 
     var id = $routeParams.id;
     $http.get('/tips/' + id).success(function(data) {
@@ -12,7 +12,7 @@ angular.module('app').controller('ViewController', function($scope, $http, $loca
         $http.delete('/tips/' + id).success(function(data){
             $scope.tip = data;
             $location.path('/list');
-            toastr.success('Contact deleted successfully!');
+            toastr.success('Tip deleted successfully!');
         }).error(function(status) {
             toastr.warning('Please try again after sometime!');
             console.log('Error: ' + status);

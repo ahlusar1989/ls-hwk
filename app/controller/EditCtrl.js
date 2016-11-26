@@ -1,5 +1,5 @@
 angular.module('app').controller('EditController', function($scope, $http, $location, $routeParams) {
-    $scope.title = "Edit Contact";
+    $scope.title = "Edit Tip";
 
     var id = $routeParams.id;
     $http.get('/tips/' + id).success(function(data) {
@@ -16,7 +16,7 @@ angular.module('app').controller('EditController', function($scope, $http, $loca
         $http.put('/tipstip/' + $scope.tip._id, $scope.tip).success(function(data) {
             $scope.tip = data;
             $location.path('/list');
-            toastr.success('Contact updated successfully!');
+            toastr.success('Tip updated successfully!');
         }).error(function(status) {
             toastr.warning('Wrongly entered. Please check!');
             console.log('Error: ' + status);

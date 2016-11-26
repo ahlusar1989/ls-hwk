@@ -5,7 +5,7 @@ angular.module('app').controller('AddController', function($scope, $http, $locat
         $http.post('/tips', $scope.tip).success(function(data) {
             $scope.tip = data;
             $location.path('/list');
-            toastr.success('Contact added successfully!');
+            toastr.success('Tip added successfully!');
         }).error(function(status) {
             toastr.warning('Wrongly entered. Please check!');
             console.log('Error: ' + status);
