@@ -13,7 +13,7 @@ angular.module('app').controller('EditController', function($scope, $http, $loca
     };
 
     $scope.update = function() {
-        $http.put('/tipstip/' + $scope.tip._id, $scope.tip).success(function(data) {
+        $http.put('/tips/' + $scope.tip._id, $scope.tip).success(function(data) {
             $scope.tip = data;
             $location.path('/list');
             toastr.success('Tip updated successfully!');
